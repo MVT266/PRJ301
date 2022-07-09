@@ -5,6 +5,7 @@
 
 package controller;
 
+import dal.loginDBcontext;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -53,7 +54,14 @@ public class AttendanceController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        request.getRequestDispatcher("view/Attendance report.jsp").forward(request, response);
+         String user_name = (String)request.getSession().getAttribute("username");
+         String password =(String) request.getSession().getAttribute("password");
+        
+        String className = request.getParameter("class");
+        ArrayList<Attendance> listAttends = new AttendanceReportDBContext().listattendancereport(className,code);
+        request.setAttribute("listAttends", listAttends);
+       request.getRequestDispatcher("view/Attendance report.jsp").forward(request, response);
+        request.getRequestDispatcher("view/attendance report.jsp").forward(request, response);
     } 
 
     /** 

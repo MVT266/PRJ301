@@ -9,8 +9,8 @@
         <servlet-class>controller.HomeController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>displayController</servlet-name>
-        <servlet-class>controller.DisplayController</servlet-class>
+        <servlet-name>TimetableController</servlet-name>
+        <servlet-class>controller.TimetableController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>MarkController</servlet-name>
@@ -19,6 +19,10 @@
     <servlet>
         <servlet-name>attendanceController</servlet-name>
         <servlet-class>controller.AttendanceController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>lession</servlet-name>
+        <servlet-class>dal.lessionDBcontext</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>loginSevelet</servlet-name>
@@ -29,7 +33,7 @@
         <url-pattern>/home</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>displayController</servlet-name>
+        <servlet-name>TimetableController</servlet-name>
         <url-pattern>/timetable</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>attendanceController</servlet-name>
         <url-pattern>/attendanceview</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>lession</servlet-name>
+        <url-pattern>/lession</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

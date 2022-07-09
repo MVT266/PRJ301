@@ -53,7 +53,7 @@ public class MarkController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        request.getRequestDispatcher("view/Mark.jsp").forward(request, response);
+        request.getRequestDispatcher("view/mark.jsp").forward(request, response);
     } 
 
     /** 

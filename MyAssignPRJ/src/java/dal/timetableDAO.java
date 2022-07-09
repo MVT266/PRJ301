@@ -15,22 +15,28 @@ import model.timetable;
  * @author ADMIN
  */
 public class timetableDAO extends DBContext {
-    
-    public ArrayList<timetable> getTimeTable(){
+
+    public ArrayList<timetable> getTimeTable() {
         ArrayList<timetable> listTable = new ArrayList<>();
-        try{
-            String sql = "select e.name,c.room,d.date from course_class c,Course e,date_course d where c.id_course = e.id and d.id_course = e.id";
+        try {
+            String sql = "SELECT * FROM [Lession] as l \n"
+                    + "inner join [Group] as g on g.Group_id=l.Group_id\n"
+                    + "inner join [Slot] as s on s.Slot_id=l.Slot\n"
+                    + "inner join [Instructor] as i on i.Instructor_id=l.Instructor_id\n"
+                    + "inner join [Room] as r on r.Room_id=l.Room\n"
+                    + "where (1=1)";
             PreparedStatement stm = connection.prepareStatement(sql);
             ResultSet rs = stm.executeQuery();
-            while(rs.next()){
-                timetable t = new timetable(rs.getString(1),rs.getString(2),rs.getString(3));
+            while (rs.next()) {
+                timetable t = new timetable(rs.getString(1), rs.getString(2), rs.getString(3));
                 listTable.add(t);
             }
-        }catch(SQLException e){
-            
+        } catch (SQLException e) {
+
         }
         return listTable;
-    }    
+    }
+
     @Override
     public ArrayList list() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
@@ -55,6 +61,7 @@ public class timetableDAO extends DBContext {
     public void delete(Object model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
     public static void main(String[] args) {
         System.out.println(new timetableDAO().getTimeTable());
     }

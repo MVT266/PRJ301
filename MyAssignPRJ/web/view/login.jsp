@@ -17,13 +17,12 @@
         <title>JSP Page</title>
         <script src="../js/newjavascript.js" type="text/javascript"></script>
     </head>
-    <!--    <body style="background-image: url(./img/8352cb51b703745d2d12.jpg);">-->
     <form action="login" method="POST">
         <div class="page">
             <div class="container">
                 <div class="left">
                     <div class="login">Login</div>
-                    <div class="eula">By logging in you agree to the ridiculously long terms that you didn't bother to read</div>
+                    <div class="eula">FPT UNIVERSITY-Dream Of Innovation</div>
                 </div>
                 <div class="right">
                     <svg viewBox="0 0 320 300">

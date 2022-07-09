@@ -5,7 +5,7 @@
 
 package controller;
 
-import dal.userDBContext;
+import dal.AccountDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
-import model.user;
+import model.Account;
 
 /**
  *
@@ -56,10 +56,10 @@ public class HomeController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-       userDBContext dbuser = new userDBContext();
-       ArrayList<user> user = dbuser.list();
+       AccountDBContext dbuser = new AccountDBContext();
+       ArrayList<Account> user = dbuser.list();
        request.setAttribute("user", user);
-       request.getRequestDispatcher("view/Home.jsp").forward(request, response);
+       request.getRequestDispatcher("view/home.jsp").forward(request, response);
     } 
 
     /** 
