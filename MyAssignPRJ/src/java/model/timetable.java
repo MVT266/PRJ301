@@ -8,7 +8,7 @@ import java.sql.Date;
 
 /**
  *
- * @author ADMIN
+ * author acer
  */
 public class timetable {
     private String name;

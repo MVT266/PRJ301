@@ -2,31 +2,33 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Model;
+package model;
 
 import java.util.ArrayList;
 
 /**
  *
- * @author ASUS G731G
+ * @author Acer
  */
 public class Group {
     private int group_id;
     private String group_name;
     private String course_id;
     private ArrayList<Student> students;
-    private int structor_id;
+    private String student_id;
+    private int instructor_id;
 
-    public Group() {
-    }
-
-    public Group(int group_id, String group_name, String course_id, ArrayList<Student> students, int structor_id) {
-        this.group_id = group_id;
-        this.group_name = group_name;
-        this.course_id = course_id;
-        this.students = students;
-        this.structor_id = structor_id;
-    }
+//    public Group(int group_id, String group_name, String course_id, ArrayList<Student> students, String student_id, int instructor_id) {
+//        this.group_id = group_id;
+//        this.group_name = group_name;
+//        this.course_id = course_id;
+//        this.students = students;
+//        this.student_id = student_id;
+//        this.instructor_id = instructor_id;
+//    }
+//
+        public Group() {
+        }
 
     public int getGroup_id() {
         return group_id;
@@ -60,13 +62,20 @@ public class Group {
         this.students = students;
     }
 
-    public int getStructor_id() {
-        return structor_id;
+    public String getStudent_id() {
+        return student_id;
     }
 
-    public void setStructor_id(int structor_id) {
-        this.structor_id = structor_id;
+    public void setStudent_id(String student_id) {
+        this.student_id = student_id;
     }
-    
-    
+
+    public int getInstructor_id() {
+        return instructor_id;
+    }
+
+    public void setInstructor_id(int instructor_id) {
+        this.instructor_id = instructor_id;
+    }
+
 }

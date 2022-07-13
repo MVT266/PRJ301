@@ -12,6 +12,9 @@ public class Account {
     private String username;
     private String password;
 
+    public Account() {
+    }
+
     public String getUsername() {
         return username;
     }
