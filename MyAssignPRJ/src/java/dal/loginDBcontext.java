@@ -37,7 +37,26 @@ public class loginDBcontext extends DBContext<Account>{
         }
         return null;
     }
-
+    
+     public String getCode(String user_name, String password) {
+        try {
+            String sql = "SELECT account_id FROM [FAP_Database].[dbo].[Account]\n"
+                    + "WHERE username = ? AND pass = ?";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setString(1, user_name);
+            stm.setString(2, password);
+            ResultSet rs = stm.executeQuery();
+            if(rs.next())
+            {
+         
+                return rs.getString(1);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(loginDBcontext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+     
     @Override
     public ArrayList<Account> list() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody

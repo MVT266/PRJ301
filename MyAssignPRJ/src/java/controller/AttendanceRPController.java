@@ -5,6 +5,8 @@
 
 package controller;
 
+import dal.attendanceRPContext;
+import dal.attendanceTakingContext;
 import dal.loginDBcontext;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -12,12 +14,14 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+import model.Lession;
 
 /**
  *
  * @author ADMIN
  */
-public class AttendanceController extends HttpServlet {
+public class AttendanceRPController extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -29,18 +33,14 @@ public class AttendanceController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet attendanceController</title>");  
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet attendanceController at " + request.getContextPath () + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+        //request.getParame
+        //User user = (User)request.getSession().getAttribute("account");
+        String user_name = (String)request.getSession().getAttribute("username");
+         String password =(String) request.getSession().getAttribute("password");
+        
+        ArrayList<Lession> listAttends = new attendanceRPContext().listattendancereport();
+        request.setAttribute("listAttends", listAttends);
+       request.getRequestDispatcher("view/attendance report.jsp").forward(request, response);
     } 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -54,14 +54,8 @@ public class AttendanceController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-         String user_name = (String)request.getSession().getAttribute("username");
-         String password =(String) request.getSession().getAttribute("password");
         
-        String className = request.getParameter("class");
-        ArrayList<Attendance> listAttends = new AttendanceReportDBContext().listattendancereport(className,code);
-        request.setAttribute("listAttends", listAttends);
-       request.getRequestDispatcher("view/Attendance report.jsp").forward(request, response);
-        request.getRequestDispatcher("view/attendance report.jsp").forward(request, response);
+        processRequest(request, response);
     } 
 
     /** 

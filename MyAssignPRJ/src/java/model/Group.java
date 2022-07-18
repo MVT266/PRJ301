@@ -14,7 +14,7 @@ public class Group {
     private int group_id;
     private String group_name;
     private String course_id;
-    private ArrayList<Student> students;
+    private Student students;
     private String student_id;
     private int instructor_id;
 
@@ -54,11 +54,11 @@ public class Group {
         this.course_id = course_id;
     }
 
-    public ArrayList<Student> getStudents() {
+    public Student getStudents() {
         return students;
     }
 
-    public void setStudents(ArrayList<Student> students) {
+    public void setStudents(Student students) {
         this.students = students;
     }
 

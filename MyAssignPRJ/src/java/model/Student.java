@@ -18,48 +18,76 @@ public class Student {
     private String lastname;
     private Date dob;
     private boolean gender;
-    private String account;
+    private int account_id;
     private ArrayList<Student> stus = new ArrayList<>();
 
     public Student() {
     }
 
-    public Student(String student_id, String firstname, String middlename, String lastname, Date dob, boolean gender, String account) {
+    public Student(String student_id, String firstname, String middlename, String lastname, Date dob, boolean gender, int account_id) {
         this.student_id = student_id;
         this.firstname = firstname;
         this.middlename = middlename;
         this.lastname = lastname;
         this.dob = dob;
         this.gender = gender;
-        this.account = account;
+        this.account_id = account_id;
+    }
+
+    public String getStudent_id() {
+        return student_id;
     }
 
     public void setStudent_id(String student_id) {
         this.student_id = student_id;
     }
 
+    public String getFirstname() {
+        return firstname;
+    }
+
     public void setFirstname(String firstname) {
         this.firstname = firstname;
+    }
+
+    public String getMiddlename() {
+        return middlename;
     }
 
     public void setMiddlename(String middlename) {
         this.middlename = middlename;
     }
 
+    public String getLastname() {
+        return lastname;
+    }
+
     public void setLastname(String lastname) {
         this.lastname = lastname;
+    }
+
+    public Date getDob() {
+        return dob;
     }
 
     public void setDob(Date dob) {
         this.dob = dob;
     }
 
+    public boolean isGender() {
+        return gender;
+    }
+
     public void setGender(boolean gender) {
         this.gender = gender;
     }
 
-    public void setAccount(String account) {
-        this.account = account;
+    public int getAccount_id() {
+        return account_id;
+    }
+
+    public void setAccount_id(int account) {
+        this.account_id = account_id;
     }
 
     public ArrayList<Student> getStus() {
@@ -68,36 +96,6 @@ public class Student {
 
     public void setStus(ArrayList<Student> stus) {
         this.stus = stus;
-    }
-
-    public String getStudent_id() {
-        return student_id;
-    }
-
-    public String getFirstname() {
-        return firstname;
-    }
-
-    public String getMiddlename() {
-        return middlename;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public Date getDob() {
-        return dob;
-    }
-
-    public boolean isGender() {
-        return gender;
-    }
-
-    public String getAccount() {
-        return account;
-    }
-    
-    
+    } 
     
 }

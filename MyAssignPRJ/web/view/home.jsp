@@ -8,8 +8,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-<body style="background-image: url(./img/1-2-910x607.jpg);">
-<!DOCTYPE html>
+<link href="../resources/home.css" rel="stylesheet" type="text/css"/>
+    <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -31,13 +31,26 @@
 
         <div>      
             <h3>Information Access(Tra cứu thông tin)</h3>
+        </div><!--
+                <div>     
+                    <a href="curriculum">Curriculum (Khung chương trình)</a>
+                    <a href="timetable">Weekly timetable(Thời khóa biểu từng tuần)</a><br>
+                    <a href="attendanceview">Attendance report(Báo cáo điểm danh)</a><br>
+                    <a href="markview">Mark Report (Báo cáo điểm)</a>
+        
+                </div>-->
+        <div class="background-one">
+            <div class="link-container">
+                <a class="link-one" href="attendancerp">Attendance report(Báo cáo điểm danh)</a>
+            </div>
         </div>
-        <div>     
-            <a href="curriculum">Curriculum (Khung chương trình)</a>
-            <a href="timetable">Weekly timetable(Thời khóa biểu từng tuần)</a><br>
-            <a href="attendanceview">Attendance report(Báo cáo điểm danh)</a><br>
-            <a href="markview">Mark Report (Báo cáo điểm)</a>
+        <div class="background-two link-container">
+            <a class="link-two" href="timetable">Weekly timetable(Thời khóa biểu từng tuần)</a>
+        </div>
 
+        <div class="background-three link-container">
+            <a class="link-three" href="attendancetaking">Attendance Taking(Lâý điểm danh)</a>
         </div>
+
     </body>
 </html>

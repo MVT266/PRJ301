@@ -5,18 +5,22 @@
 
 package controller;
 
+import model.Group;
+import dal.attendanceTakingContext;
+import dal.loginDBcontext;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 
 /**
  *
  * @author ADMIN
  */
-public class MarkController extends HttpServlet {
+public class AttendanceTakingController extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -27,19 +31,6 @@ public class MarkController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet MarkController</title>");  
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet MarkController at " + request.getContextPath () + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
     } 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -53,7 +44,18 @@ public class MarkController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        request.getRequestDispatcher("view/mark.jsp").forward(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+        String Group_name = request.getParameter("Group_name");
+        Group_name = "SE1610";
+        ArrayList<Group> listAttendance = new attendanceTakingContext().listAttendance(Group_name);
+        String lessionID = new attendanceTakingContext().getLessionIDByGroupIdAndStudentID(listAttendance.get(0).getGroup_id(), listAttendance.get(0).getStudents().getStudent_id());
+        ArrayList<String> listClass = new attendanceTakingContext().listClass();
+        request.setAttribute("Group_name", Group_name);
+        request.setAttribute("listClass", listClass);
+//        request.setAttribute("listID", listID);
+        request.setAttribute("lessionid", lessionID);
+        request.setAttribute("listAttendance", listAttendance);
+        request.getRequestDispatcher("view/attendance taking.jsp").forward(request, response);
     } 
 
     /** 
@@ -66,7 +68,13 @@ public class MarkController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        processRequest(request, response);
+        String lessionID = request.getParameter("lessionid");
+        String studentID = request.getParameter("studentid");
+        String status = request.getParameter("status");
+        
+        attendanceTakingContext atkDB = new attendanceTakingContext();
+        atkDB.update(studentID, Integer.parseInt(lessionID), Integer.parseInt(status));
+        response.sendRedirect("view/attendance view.jsp");
     }
 
     /** 

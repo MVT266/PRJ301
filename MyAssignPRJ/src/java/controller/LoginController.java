@@ -71,8 +71,7 @@ public class LoginController extends HttpServlet {
             response.getWriter().println("login failed!");
              response.getWriter().println("Incorrect username or password");
             response.getWriter().println("please return to the page /login");
-        }
-    
+        }   
     }
 
     /** 
