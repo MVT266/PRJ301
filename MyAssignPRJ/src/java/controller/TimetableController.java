@@ -17,7 +17,7 @@ import model.timetable;
 
 /**
  *
- * @author ADMIN
+ * @author Acer
  */
 public class TimetableController extends HttpServlet {
    
@@ -31,7 +31,7 @@ public class TimetableController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        ArrayList<timetable> listTable = new timetableDAO().getTimeTable();
+        ArrayList<String> listTable = new timetableDAO().getTimeTable();
         request.setAttribute("listTable", listTable);
         request.getRequestDispatcher("view/timetable.jsp").forward(request, response);
         

@@ -1,7 +1,7 @@
 <%-- 
     Document   : display
     Created on : Jun 7, 2022, 1:31:52 PM
-    Author     : ADMIN
+    Author     : acer
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -44,19 +44,20 @@
             </tr>
             <tr>
                 <td align="center">MONDAY
-                <td align="center"><font color="blue">DGT301<br>
-                <td align="center"><font color="pink">AIL302<br>
-                <td align="center"><font color="red">SWE202<br>
-                <td rowspan="6"align="center">L<br>U<br>N<br>C<br>H
-                <td align="center"><font color="maroon">Empty<br>
-                <td align="center"><font color="brown">Empty<br>
-                <td align="center">counselling class
+                <td align="center">AIL302m-BE344<br>
+                <td align="center"><font color="brown">AIL302m-DE312<br>
+                <td align="center"><font color="orange">PRJ301-DE123<BR>         
+                <td align="center"><font color="blue">Empty<br>
+                <td align="center"><font color="red">Empty<br>
+                <td align="center">library
+
             </tr>
             <tr>
                 <td align="center">TUESDAY
-                <td align="center"><font color="blue">AIL302m<br>
-                <td align="center"><font color="red">PRJ301<br>
-                <td align="center"><font color="pink">PRJ301<br>
+                                 
+                <td align="center"><font color="blue">AIL302m-DE145<br>
+                <td align="center"><font color="red">PRJ301-DE345<br>
+                <td align="center"><font color="pink">PRJ301-NE231<br>
                 <td align="center"><font color="orange">Empty<BR>
                 <td align="center"><font color="maroon">EMPTY<br>
                 <td align="center">library
@@ -64,31 +65,31 @@
             <tr>
                 <td align="center">WEDNESDAY
                 <td align="center"><font color="pink">Empty<br>
-                <td align="center"><font color="orange">DGT301<BR>
-                <td align="center"><font color="brown">PRM392<br>
+                <td align="center"><font color="orange">DGT301-AL111<BR>
+                <td align="center"><font color="brown">PRM392-AL231<br>
                 <td colspan="3" align="center"><font color="green"> lab
             </tr>
             <tr>
                 <td align="center">THURSDAY
-                <td align="center">AIL302m<br>
-                <td align="center"><font color="brown">AIL302m<br>
-                <td align="center"><font color="orange">PRJ301<BR>         
+                <td align="center">AIL302m-BE112<br>
+                <td align="center"><font color="brown">AIL302m-BE322<br>
+                <td align="center"><font color="orange">PRJ301-BE322<BR>         
                 <td align="center"><font color="blue">Empty<br>
                 <td align="center"><font color="red">Empty<br>
                 <td align="center">library
             </tr>
-            <tr>
+            <tr>------------------------------
                 <td align="center">FRIDAY
                 <td align="center"><font color="orange">Empty<BR>
-                <td align="center"><font color="maroon">DGT301<br>
-                <td align="center"><font color="blue">PRM392<br>              
+                <td align="center"><font color="maroon">DGT301-BE234<br>
+                <td align="center"><font color="blue">PRM392-AL321<br>              
                 <td align="center"><font color="pink">Empty<br>
                 <td align="center"><font color="brown">Empty<br>
                 <td align="center">library
             </tr>
             <tr>
                 <td align="center">SATURDAY
-                <td align="center"><font color="red">PRC391c<br>
+                <td align="center"><font color="red">PRC391c-AL123<br>
                 <td colspan="3" align="center">seminar
                 <td align="center"><font color="pink">Empty<br>
                 <td align="center"><font color="brown">Empty<br>

@@ -1,14 +1,15 @@
 <%-- 
     Document   : Home
     Created on : Jun 17, 2022, 8:09:45 AM
-    Author     : ADMIN
+    Author     : acer
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-<link href="../resources/home.css" rel="stylesheet" type="text/css"/>
+<link href="resources/Home.css" rel="stylesheet" type="text/css"/>
+
     <!DOCTYPE html>
 <html>
     <head>
@@ -31,15 +32,20 @@
 
         <div>      
             <h3>Information Access(Tra cứu thông tin)</h3>
-        </div><!--
-                <div>     
-                    <a href="curriculum">Curriculum (Khung chương trình)</a>
-                    <a href="timetable">Weekly timetable(Thời khóa biểu từng tuần)</a><br>
-                    <a href="attendanceview">Attendance report(Báo cáo điểm danh)</a><br>
-                    <a href="markview">Mark Report (Báo cáo điểm)</a>
-        
-                </div>-->
-        <div class="background-one">
+        </div>
+       
+                <nav class="navMenu">
+                    <a href="attendancerp">Attendance report(Báo cáo điểm danh)</a>
+                    <a></a>
+                    <a href="timetable">Weekly timetable(Thời khóa biểu từng tuần)</a>
+                    <a></a>
+                    <a href="attendancetaking">Attendance Taking(Lâý điểm danh)</a>
+                    <a></a>
+                    <a href="class">Class(Lớp)</a>
+                    <div class="dot"></div>
+                </nav>
+  
+<!--        <div class="background-one">
             <div class="link-container">
                 <a class="link-one" href="attendancerp">Attendance report(Báo cáo điểm danh)</a>
             </div>
@@ -50,7 +56,7 @@
 
         <div class="background-three link-container">
             <a class="link-three" href="attendancetaking">Attendance Taking(Lâý điểm danh)</a>
-        </div>
+        </div>-->
 
     </body>
 </html>

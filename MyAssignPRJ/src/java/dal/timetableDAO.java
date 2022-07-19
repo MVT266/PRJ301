@@ -8,31 +8,35 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import model.timetable;
 
 /**
  *
- * @author ADMIN
+ * @author Acer
  */
 public class timetableDAO extends DBContext {
 
-    public ArrayList<timetable> getTimeTable() {
-        ArrayList<timetable> listTable = new ArrayList<>();
+    public ArrayList<String> getTimeTable() {
+        ArrayList<String> listTable = new ArrayList<>();
+        String sql = "SELECT Course_id, Group_name FROM [Group] g ";
         try {
-            String sql = "SELECT * FROM [Lession] as l \n"
-                    + "inner join [Group] as g on g.Group_id=l.Group_id\n"
-                    + "inner join [Slot] as s on s.Slot_id=l.Slot\n"
-                    + "inner join [Instructor] as i on i.Instructor_id=l.Instructor_id\n"
-                    + "inner join [Room] as r on r.Room_id=l.Room\n"
-                    + "where (1=1)";
             PreparedStatement stm = connection.prepareStatement(sql);
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
-                timetable t = new timetable(rs.getString(1), rs.getString(2), rs.getString(3));
-                listTable.add(t);
+//                timetable t = new timetable(rs.getString(1), rs.getString(2), rs.getString(3));
+//                listTable.add(t);
+                  listTable.add(rs.getString(1));
             }
-        } catch (SQLException e) {
-
+       } catch (SQLException ex) {
+            Logger.getLogger(timetableDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(timetableDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         return listTable;
     }

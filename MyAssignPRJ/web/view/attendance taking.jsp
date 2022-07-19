@@ -1,7 +1,7 @@
 <%-- 
     Document   : Attendance report
     Created on : Jun 14, 2022, 8:10:39 AM
-    Author     : ADMIN
+    Author     : acer
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -45,7 +45,8 @@
                     <th>No</th>
                     <th>Course_id</th>
                     <th>Student_id</th>
-                    <th>Lastname</th>
+                    <th>Lession_id</th>
+                    <th>Name</th>
                     <th>Status</th>
                     <th>Taker</th>
                     <th>Record time</th>
